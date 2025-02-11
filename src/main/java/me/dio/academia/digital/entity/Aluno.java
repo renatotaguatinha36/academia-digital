@@ -1,7 +1,6 @@
 package me.dio.academia.digital.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,7 +10,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_alunos")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Aluno {
 
   @Id
