@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 @Entity
 @Table(name = "tb_alunos")
 public class Aluno {
 
   @Id
+  private static final long serialVersionUID = 4958197419L;
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
@@ -92,3 +94,5 @@ public class Aluno {
   private List<AvaliacaoFisica> avaliacoes = new ArrayList<>();
 
 }
+
+
