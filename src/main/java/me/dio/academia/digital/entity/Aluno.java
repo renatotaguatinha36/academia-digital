@@ -2,18 +2,13 @@ package me.dio.academia.digital.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Entity
 @Table(name = "tb_alunos")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -32,6 +27,18 @@ public class Aluno {
 
   private LocalDate dataDeNascimento;
 
+
+  public Aluno() {
+  }
+
+  public Aluno(Long id, String nome, String cpf, String bairro, LocalDate dataDeNascimento, List<AvaliacaoFisica> avaliacoes) {
+    this.id = id;
+    this.nome = nome;
+    this.cpf = cpf;
+    this.bairro = bairro;
+    this.dataDeNascimento = dataDeNascimento;
+    this.avaliacoes = avaliacoes;
+  }
 
 
   public Long getId() {
